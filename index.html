@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>US Indicator Radar - 100 U.S. Economic Indicators, Anomaly-Checked Daily</title>
+<meta name="description" content="Track 100 key U.S. economic indicators (GDP, CPI, jobs, housing, rates, markets) in plain English. Latest values, changes and anomaly scores, refreshed daily from FRED data.">
+<link rel="canonical" href="https://ezra-zhao.github.io/us-indicator-radar/">
+<meta property="og:title" content="US Indicator Radar - 100 U.S. Economic Indicators">
+<meta property="og:description" content="Latest values, changes and daily anomaly scores for 100 U.S. economic indicators. Plain English, no paywall.">
+<meta property="og:type" content="website">
+<style>
+:root{--bg:#0d1117;--panel:#161b22;--line:#2b3442;--txt:#e6edf3;--dim:#9aa7b4;
+--up:#e5534b;--down:#3fb950;--warn:#d29922;--accent:#58a6ff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);
+font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.55}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line);padding:14px 0}
+.nav{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.brand{font-weight:700;font-size:20px;color:var(--txt)}
+.brand small{color:var(--dim);font-weight:400;font-size:13px;margin-left:8px}
+.navlinks a{margin-left:14px;font-size:14px}
+h1{font-size:30px;margin:26px 0 6px}h2{font-size:21px;margin:30px 0 10px}
+.sub{color:var(--dim);margin:0 0 8px}
+.badge{display:inline-block;border:1px solid var(--warn);color:var(--warn);
+border-radius:20px;padding:1px 10px;font-size:12px;margin-right:6px}
+.badge.ok{border-color:var(--line);color:var(--dim)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px}
+.card .nm{font-weight:600;font-size:15px}
+.card .zh{color:var(--dim);font-size:12px}
+.card .val{font-size:24px;margin:6px 0 2px}
+.card .meta{color:var(--dim);font-size:12.5px}
+.z{font-weight:700}.z.hot{color:var(--warn)}
+.chg.up{color:var(--up)}.chg.down{color:var(--down)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.controls input{background:var(--panel);border:1px solid var(--line);border-radius:8px;
+color:var(--txt);padding:9px 12px;font-size:15px;min-width:230px;flex:1}
+.chip{border:1px solid var(--line);background:var(--panel);color:var(--txt);
+border-radius:20px;padding:6px 13px;cursor:pointer;font-size:13.5px}
+.chip.on{border-color:var(--accent);color:var(--accent)}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--dim);font-weight:600;cursor:pointer;white-space:nowrap}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr.anom td{background:rgba(210,153,34,.07)}
+footer{border-top:1px solid var(--line);margin-top:44px;padding:20px 0 34px;color:var(--dim);font-size:13.5px}
+.adslot{border:1px dashed var(--line);border-radius:10px;color:var(--dim);
+text-align:center;padding:14px;margin:22px 0;font-size:12.5px}
+.kv{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:14px 0}
+.kv .cell{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}
+.kv .k{color:var(--dim);font-size:12.5px}.kv .v{font-size:21px;margin-top:2px}
+.note{color:var(--dim);font-size:13.5px}
+.btn{display:inline-block;border:1px solid var(--accent);border-radius:8px;padding:7px 14px;margin:4px 6px 4px 0}
+</style></head><body>
+<header><div class="wrap nav">
+<a class="brand" href="https://ezra-zhao.github.io/us-indicator-radar/">US Indicator Radar <small>百指 · 100 U.S. economic indicators, anomaly-checked daily</small></a>
+<span class="navlinks">
+<a href="https://www.youtube.com/@ezra-zhao" rel="noopener">YouTube Daily Show</a>
+<a href="https://www.tradingview.com/?aff_id=1172518" rel="noopener sponsored">TradingView</a>
+<a href="https://github.com/Ezra-Zhao" rel="noopener">GitHub</a>
+<a href="https://github.com/sponsors/Ezra-Zhao" rel="noopener">Sponsor</a>
+</span></div></header>
+<main class="wrap">
+<h1>100 U.S. economic indicators. One page. Anomalies first.</h1>
+<p class="sub">Every day we snapshot 100 key series from FRED (Federal Reserve
+Economic Data) and flag the ones moving unusually versus their own history.
+Snapshot date: <b>2026-10-13</b> · <span class="badge">9 anomalies today</span></p>
+<h2>Today's anomalies</h2>
+<div class="cards"><a href="indicators/mortgage30us.html" style="color:inherit">
+<div class="card"><div class="nm">30-Year Fixed Rate Mortgage Average</div>
+<div class="zh">30年房贷利率 · MORTGAGE30US</div>
+<div class="val">7.4 %</div>
+<div class="meta"><span class="chg up">+1.65%</span> vs prev · z <span class="z hot">+2.97</span> · as of 2026-10-08</div></div></a><a href="indicators/mortgage15us.html" style="color:inherit">
+<div class="card"><div class="nm">15-Year Fixed Rate Mortgage Average</div>
+<div class="zh">15年房贷利率 · MORTGAGE15US</div>
+<div class="val">6.73 %</div>
+<div class="meta"><span class="chg up">+1.97%</span> vs prev · z <span class="z hot">+2.97</span> · as of 2026-10-08</div></div></a><a href="indicators/whlslrimsa.html" style="color:inherit">
+<div class="card"><div class="nm">Merchant Wholesaler Inventories</div>
+<div class="zh">批发库存 · WHLSLRIMSA</div>
+<div class="val">958,854</div>
+<div class="meta"><span class="chg up">+1.29%</span> vs prev · z <span class="z hot">+2.74</span> · as of 2026-07-01</div></div></a><a href="indicators/amtmvs.html" style="color:inherit">
+<div class="card"><div class="nm">Manufacturers&#x27; Shipments: Total Manufacturing</div>
+<div class="zh">制造业出货值 · AMTMVS</div>
+<div class="val">658,622</div>
+<div class="meta"><span class="chg ">-0.00%</span> vs prev · z <span class="z hot">+2.23</span> · as of 2026-08-01</div></div></a><a href="indicators/rrsfs.html" style="color:inherit">
+<div class="card"><div class="nm">Real Retail and Food Services Sales</div>
+<div class="zh">实际零售销售 · RRSFS</div>
+<div class="val">231,630</div>
+<div class="meta"><span class="chg up">+0.84%</span> vs prev · z <span class="z hot">+2.15</span> · as of 2026-08-01</div></div></a><a href="indicators/totalsl.html" style="color:inherit">
+<div class="card"><div class="nm">Total Consumer Credit Outstanding</div>
+<div class="zh">消费信贷总额 · TOTALSL</div>
+<div class="val">5,196,778.4</div>
+<div class="meta"><span class="chg up">+0.16%</span> vs prev · z <span class="z hot">+2.05</span> · as of 2026-08-01</div></div></a><a href="indicators/m1sl.html" style="color:inherit">
+<div class="card"><div class="nm">M1 Money Stock</div>
+<div class="zh">M1货币供应 · M1SL</div>
+<div class="val">19,991.1</div>
+<div class="meta"><span class="chg up">+0.53%</span> vs prev · z <span class="z hot">+2.02</span> · as of 2026-08-01</div></div></a><a href="indicators/reaintratrearat10y.html" style="color:inherit">
+<div class="card"><div class="nm">10-Year Real Interest Rate (TIPS)</div>
+<div class="zh">10年实际利率 · REAINTRATREARAT10Y</div>
+<div class="val">2.2449</div>
+<div class="meta"><span class="chg up">+2.47%</span> vs prev · z <span class="z hot">+2.01</span> · as of 2026-09-01</div></div></a><a href="indicators/dexuseu.html" style="color:inherit">
+<div class="card"><div class="nm">U.S. Dollars per Euro</div>
+<div class="zh">欧元/美元 · DEXUSEU</div>
+<div class="val">1.1259 USD per EUR</div>
+<div class="meta"><span class="chg up">+0.24%</span> vs prev · z <span class="z hot">-2.01</span> · as of 2026-10-02</div></div></a></div>
+<h2>All 100 indicators</h2>
+<div class="controls"><input id="q" type="search" placeholder="Search: mortgage, CPI, jobs, dollar...">
+<label class="chip" style="cursor:pointer"><input type="checkbox" id="onlyanom"> Anomalies only</label></div>
+<div class="controls" id="chips"><button class="chip on" data-cat="all">All</button><button class="chip" data-cat="Consumer">Consumer</button><button class="chip" data-cat="Growth">Growth</button><button class="chip" data-cat="Housing">Housing</button><button class="chip" data-cat="Inflation">Inflation</button><button class="chip" data-cat="Jobs">Jobs</button><button class="chip" data-cat="Manufacturing">Manufacturing</button><button class="chip" data-cat="Markets">Markets</button><button class="chip" data-cat="Money &amp; Credit">Money &amp; Credit</button><button class="chip" data-cat="Rates">Rates</button><button class="chip" data-cat="Trade &amp; Dollar">Trade &amp; Dollar</button></div>
+<table id="tbl"><thead><tr>
+<th>Indicator</th><th>Category</th><th class="num">Latest</th>
+<th class="num">Change</th><th class="num">Z-score</th><th>As of</th></tr></thead>
+<tbody></tbody></table>
+<p class="note" id="count"></p>
+<!-- ad-slot: AdSense unit to be inserted after approval -->
+<div class="adslot">Advertisement slot (pending AdSense approval)</div>
+<h2>How to read this page</h2>
+<p>The <b>z-score</b> compares each indicator's latest change with the spread of
+its own recent changes. Beyond roughly ±2, the move is unusual for that series -
+a prompt to look closer, not a buy or sell signal. Values are the latest
+observation each series has published, so dates differ (daily series are fresh;
+GDP is quarterly).</p>
+<h2>Prefer video?</h2>
+<p>The same snapshot powers a daily Chinese-language video briefing,
+<a href="https://www.youtube.com/@ezra-zhao" rel="noopener">《美国百指日报》(US BaiZhi Daily)</a> on YouTube,
+which walks through the day's anomalies in a few minutes.</p>
+<h2>Methodology and honesty notes</h2>
+<p class="note">Source data: FRED, Federal Reserve Bank of St. Louis, series
+linked from each indicator page. This is an independent personal project by
+Guangyi Zhao, built clean-room from public data; it is not affiliated with the
+Federal Reserve. Nothing here is investment advice.</p>
+</main>
+<footer><div class="wrap">
+<p>Data: Federal Reserve Economic Data (FRED), Federal Reserve Bank of St. Louis.
+Values shown are the latest observation of each series as captured in our daily
+snapshot on 2026-10-13. Z-scores compare each series' latest change with its own
+recent history (see methodology on the home page) and are an orientation aid,
+not investment advice.</p>
+<p>Built and maintained by Guangyi Zhao as a clean-room personal project.
+&copy; 2026 Guangyi Zhao. Charts: <a href="https://www.tradingview.com/?aff_id=1172518" rel="noopener sponsored">TradingView</a>
+(affiliate link). More projects on <a href="https://github.com/Ezra-Zhao" rel="noopener">GitHub</a>.</p>
+</div></footer>
+<script>
+const DATA = [{"id": "GDPC1", "en": "Real Gross Domestic Product", "zh": "实际GDP", "cat": "Growth", "date": "2026-04-01", "value": 24408.011, "prev": 24274.383, "chg": 0.55, "z": 1.57, "anom": false, "unit": "billion chained 2017 $ (SAAR)", "slug": "gdpc1"}, {"id": "GDP", "en": "Gross Domestic Product (Nominal)", "zh": "名义GDP", "cat": "Growth", "date": "2026-04-01", "value": 32563.03, "prev": 31906.274, "chg": 2.06, "z": 1.68, "anom": false, "unit": "billion $ (SAAR)", "slug": "gdp"}, {"id": "GPDIC1", "en": "Real Gross Private Domestic Investment", "zh": "实际私人国内投资", "cat": "Growth", "date": "2026-04-01", "value": 4615.141, "prev": 4563.036, "chg": 1.14, "z": 1.46, "anom": false, "unit": "", "slug": "gpdic1"}, {"id": "PCEC96", "en": "Real Personal Consumption Expenditures", "zh": "实际个人消费支出", "cat": "Growth", "date": "2026-08-01", "value": 16955.3, "prev": 16862.5, "chg": 0.55, "z": 1.84, "anom": false, "unit": "", "slug": "pcec96"}, {"id": "INDPRO", "en": "Industrial Production Index", "zh": "工业产出指数", "cat": "Manufacturing", "date": "2026-08-01", "value": 103.0682, "prev": 103.0454, "chg": 0.02, "z": 1.89, "anom": false, "unit": "index 2017=100", "slug": "indpro"}, {"id": "IPMAN", "en": "Industrial Production: Manufacturing", "zh": "制造业产出", "cat": "Manufacturing", "date": "2026-08-01", "value": 99.0964, "prev": 99.3952, "chg": -0.3, "z": 1.67, "anom": false, "unit": "", "slug": "ipman"}, {"id": "TCU", "en": "Capacity Utilization: Total Industry", "zh": "产能利用率", "cat": "Manufacturing", "date": "2026-08-01", "value": 76.2717, "prev": 76.3259, "chg": -0.07, "z": 0.64, "anom": false, "unit": "%", "slug": "tcu"}, {"id": "CUMFNS", "en": "Capacity Utilization: Manufacturing", "zh": "制造业产能利用率", "cat": "Manufacturing", "date": "2026-08-01", "value": 75.7424, "prev": 76.0123, "chg": -0.36, "z": 0.53, "anom": false, "unit": "%", "slug": "cumfns"}, {"id": "IPG331S", "en": "Industrial Production: Durable Manufacturing", "zh": "耐用品制造业产出", "cat": "Manufacturing", "date": "2026-08-01", "value": 100.7582, "prev": 101.0251, "chg": -0.26, "z": 1.24, "anom": false, "unit": "", "slug": "ipg331s"}, {"id": "DGORDER", "en": "Manufacturers' New Orders: Durable Goods", "zh": "耐用品订单", "cat": "Manufacturing", "date": "2026-08-01", "value": 338458.0, "prev": 338700.0, "chg": -0.07, "z": 1.49, "anom": false, "unit": "", "slug": "dgorder"}, {"id": "AMTMNO", "en": "Manufacturers' New Orders: Total Manufacturing", "zh": "制造业新订单", "cat": "Manufacturing", "date": "2026-08-01", "value": 663491.0, "prev": 662837.0, "chg": 0.1, "z": 1.92, "anom": false, "unit": "", "slug": "amtmno"}, {"id": "AMTMVS", "en": "Manufacturers' Shipments: Total Manufacturing", "zh": "制造业出货值", "cat": "Manufacturing", "date": "2026-08-01", "value": 658622.0, "prev": 658647.0, "chg": -0.0, "z": 2.23, "anom": true, "unit": "", "slug": "amtmvs"}, {"id": "WHLSLRIMSA", "en": "Merchant Wholesaler Inventories", "zh": "批发库存", "cat": "Manufacturing", "date": "2026-07-01", "value": 958854.0, "prev": 946687.0, "chg": 1.29, "z": 2.74, "anom": true, "unit": "", "slug": "whlslrimsa"}, {"id": "CPIAUCSL", "en": "Consumer Price Index (CPI-U)", "zh": "CPI", "cat": "Inflation", "date": "2026-08-01", "value": 334.131, "prev": 332.813, "chg": 0.4, "z": 1.75, "anom": false, "unit": "", "slug": "cpiaucsl"}, {"id": "CPILFESL", "en": "Core CPI (Less Food and Energy)", "zh": "核心CPI", "cat": "Inflation", "date": "2026-08-01", "value": 337.765, "prev": 336.789, "chg": 0.29, "z": 1.64, "anom": false, "unit": "", "slug": "cpilfesl"}, {"id": "PCEPI", "en": "PCE Price Index", "zh": "PCE物价指数", "cat": "Inflation", "date": "2026-08-01", "value": 131.579, "prev": 131.172, "chg": 0.31, "z": 1.77, "anom": false, "unit": "", "slug": "pcepi"}, {"id": "PCEPILFE", "en": "Core PCE Price Index", "zh": "核心PCE", "cat": "Inflation", "date": "2026-08-01", "value": 130.455, "prev": 130.133, "chg": 0.25, "z": 1.7, "anom": false, "unit": "", "slug": "pcepilfe"}, {"id": "CPIENGSL", "en": "CPI: Energy", "zh": "CPI能源分项", "cat": "Inflation", "date": "2026-08-01", "value": 321.148, "prev": 314.553, "chg": 2.1, "z": 1.8, "anom": false, "unit": "", "slug": "cpiengsl"}, {"id": "CPIMEDSL", "en": "Median CPI", "zh": "CPI中位数", "cat": "Inflation", "date": "2026-08-01", "value": 592.934, "prev": 594.393, "chg": -0.25, "z": 1.29, "anom": false, "unit": "", "slug": "cpimedsl"}, {"id": "PPIFIS", "en": "Producer Price Index: Final Demand", "zh": "PPI最终需求", "cat": "Inflation", "date": "2026-08-01", "value": 157.411, "prev": 156.784, "chg": 0.4, "z": 1.88, "anom": false, "unit": "", "slug": "ppifis"}, {"id": "T10YIE", "en": "10-Year Breakeven Inflation Rate", "zh": "10年通胀预期", "cat": "Inflation", "date": "2026-10-09", "value": 2.33, "prev": 2.35, "chg": -0.85, "z": -1.11, "anom": false, "unit": "%", "slug": "t10yie"}, {"id": "T5YIE", "en": "5-Year Breakeven Inflation Rate", "zh": "5年通胀预期", "cat": "Inflation", "date": "2026-10-09", "value": 2.34, "prev": 2.37, "chg": -1.27, "z": -0.61, "anom": false, "unit": "%", "slug": "t5yie"}, {"id": "T5YIFR", "en": "5-Year, 5-Year Forward Inflation Expectation", "zh": "5年远期通胀预期", "cat": "Inflation", "date": "2026-10-09", "value": 2.32, "prev": 2.33, "chg": -0.43, "z": -1.39, "anom": false, "unit": "%", "slug": "t5yifr"}, {"id": "UNRATE", "en": "Unemployment Rate", "zh": "失业率", "cat": "Jobs", "date": "2026-09-01", "value": 4.2, "prev": 4.1, "chg": 2.44, "z": -0.02, "anom": false, "unit": "%", "slug": "unrate"}, {"id": "PAYEMS", "en": "Total Nonfarm Payrolls", "zh": "非农就业人数", "cat": "Jobs", "date": "2026-09-01", "value": 159044.0, "prev": 159015.0, "chg": 0.02, "z": 1.64, "anom": false, "unit": "thousand persons", "slug": "payems"}, {"id": "CIVPART", "en": "Labor Force Participation Rate", "zh": "劳动参与率", "cat": "Jobs", "date": "2026-09-01", "value": 61.8, "prev": 61.6, "chg": 0.32, "z": -1.25, "anom": false, "unit": "%", "slug": "civpart"}, {"id": "EMRATIO", "en": "Employment-Population Ratio", "zh": "就业人口比", "cat": "Jobs", "date": "2026-09-01", "value": 59.2, "prev": 59.1, "chg": 0.17, "z": -1.21, "anom": false, "unit": "%", "slug": "emratio"}, {"id": "ICSA", "en": "Initial Jobless Claims", "zh": "初请失业金", "cat": "Jobs", "date": "2026-10-03", "value": 197000.0, "prev": 199000.0, "chg": -1.01, "z": -1.11, "anom": false, "unit": "persons", "slug": "icsa"}, {"id": "CCSA", "en": "Continued Jobless Claims", "zh": "续请失业金", "cat": "Jobs", "date": "2026-09-26", "value": 1716000.0, "prev": 1699000.0, "chg": 1.0, "z": -1.91, "anom": false, "unit": "persons", "slug": "ccsa"}, {"id": "U6RATE", "en": "U-6 Unemployment Rate", "zh": "U6失业率", "cat": "Jobs", "date": "2026-09-01", "value": 7.6, "prev": 7.7, "chg": -1.3, "z": -0.88, "anom": false, "unit": "%", "slug": "u6rate"}, {"id": "JTSJOL", "en": "Job Openings (JOLTS)", "zh": "JOLTS职位空缺", "cat": "Jobs", "date": "2026-08-01", "value": 7079.0, "prev": 7335.0, "chg": -3.49, "z": -0.57, "anom": false, "unit": "thousand", "slug": "jtsjol"}, {"id": "JTSQUR", "en": "Quits Rate (JOLTS)", "zh": "主动离职率", "cat": "Jobs", "date": "2026-08-01", "value": 1.9, "prev": 1.9, "chg": 0.0, "z": -1.26, "anom": false, "unit": "%", "slug": "jtsqur"}, {"id": "JTSHIR", "en": "Hires Rate (JOLTS)", "zh": "招聘率", "cat": "Jobs", "date": "2026-08-01", "value": 3.3, "prev": 3.2, "chg": 3.12, "z": -0.39, "anom": false, "unit": "%", "slug": "jtshir"}, {"id": "AHETPI", "en": "Average Hourly Earnings", "zh": "平均时薪", "cat": "Jobs", "date": "2026-09-01", "value": 32.6, "prev": 32.53, "chg": 0.22, "z": 1.56, "anom": false, "unit": "$/hour", "slug": "ahetpi"}, {"id": "LNS14000025", "en": "Unemployment Rate, Ages 16-19", "zh": "16-19岁失业率", "cat": "Jobs", "date": "2026-09-01", "value": 3.9, "prev": 4.0, "chg": -2.5, "z": -0.03, "anom": false, "unit": "%", "slug": "lns14000025"}, {"id": "UEMPMEAN", "en": "Average Duration of Unemployment", "zh": "平均失业时长", "cat": "Jobs", "date": "2026-09-01", "value": 24.8, "prev": 26.3, "chg": -5.7, "z": 0.84, "anom": false, "unit": "", "slug": "uempmean"}, {"id": "RSXFS", "en": "Retail Sales Excluding Food Services", "zh": "零售销售", "cat": "Consumer", "date": "2026-08-01", "value": 646347.0, "prev": 639031.0, "chg": 1.14, "z": 1.99, "anom": false, "unit": "", "slug": "rsxfs"}, {"id": "PCE", "en": "Personal Consumption Expenditures", "zh": "个人消费支出名义", "cat": "Consumer", "date": "2026-08-01", "value": 22308.5, "prev": 22117.7, "chg": 0.86, "z": 1.84, "anom": false, "unit": "", "slug": "pce"}, {"id": "UMCSENT", "en": "Consumer Sentiment (Univ. of Michigan)", "zh": "密大消费者信心", "cat": "Consumer", "date": "2026-08-01", "value": 51.7, "prev": 55.2, "chg": -6.34, "z": -0.98, "anom": false, "unit": "index", "slug": "umcsent"}, {"id": "RRSFS", "en": "Real Retail and Food Services Sales", "zh": "实际零售销售", "cat": "Consumer", "date": "2026-08-01", "value": 231630.0, "prev": 229697.0, "chg": 0.84, "z": 2.15, "anom": true, "unit": "", "slug": "rrsfs"}, {"id": "PSAVERT", "en": "Personal Saving Rate", "zh": "储蓄率", "cat": "Consumer", "date": "2026-08-01", "value": 4.1, "prev": 4.6, "chg": -10.87, "z": -1.93, "anom": false, "unit": "%", "slug": "psavert"}, {"id": "DSPIC96", "en": "Real Disposable Personal Income", "zh": "实际可支配收入", "cat": "Consumer", "date": "2026-08-01", "value": 18410.5, "prev": 18415.4, "chg": -0.03, "z": 1.63, "anom": false, "unit": "", "slug": "dspic96"}, {"id": "A229RX0", "en": "Per Capita Real Disposable Personal Income", "zh": "人均实际可支配收入", "cat": "Consumer", "date": "2026-08-01", "value": 53674.0, "prev": 53703.0, "chg": -0.05, "z": 1.72, "anom": false, "unit": "", "slug": "a229rx0"}, {"id": "MICH", "en": "Michigan Inflation Expectation (1-Year)", "zh": "密大通胀预期", "cat": "Consumer", "date": "2026-08-01", "value": 4.0, "prev": 4.2, "chg": -4.76, "z": -0.01, "anom": false, "unit": "%", "slug": "mich"}, {"id": "CSUSHPISA", "en": "S&P CoreLogic Case-Shiller Home Price Index", "zh": "标普房价指数", "cat": "Housing", "date": "2026-07-01", "value": 333.235, "prev": 332.294, "chg": 0.28, "z": 1.39, "anom": false, "unit": "", "slug": "csushpisa"}, {"id": "HOUST", "en": "Housing Starts", "zh": "新屋开工", "cat": "Housing", "date": "2026-08-01", "value": 1275.0, "prev": 1309.0, "chg": -2.6, "z": -1.09, "anom": false, "unit": "thousand units (SAAR)", "slug": "houst"}, {"id": "HOUST1F", "en": "Single-Family Housing Starts", "zh": "独栋新屋开工", "cat": "Housing", "date": "2026-08-01", "value": 918.0, "prev": 853.0, "chg": 7.62, "z": -0.56, "anom": false, "unit": "", "slug": "houst1f"}, {"id": "PERMIT", "en": "Building Permits", "zh": "营建许可", "cat": "Housing", "date": "2026-08-01", "value": 1403.0, "prev": 1433.0, "chg": -2.09, "z": -0.76, "anom": false, "unit": "thousand units (SAAR)", "slug": "permit"}, {"id": "PERMIT1", "en": "Single-Family Building Permits", "zh": "独栋营建许可", "cat": "Housing", "date": "2026-08-01", "value": 880.0, "prev": 894.0, "chg": -1.57, "z": -1.08, "anom": false, "unit": "", "slug": "permit1"}, {"id": "EXHOSLUSM495S", "en": "Existing Home Sales", "zh": "成屋销售", "cat": "Housing", "date": "2026-08-01", "value": 3980000.0, "prev": 4060000.0, "chg": -1.97, "z": -1.4, "anom": false, "unit": "units (SAAR)", "slug": "exhoslusm495s"}, {"id": "MORTGAGE30US", "en": "30-Year Fixed Rate Mortgage Average", "zh": "30年房贷利率", "cat": "Housing", "date": "2026-10-08", "value": 7.4, "prev": 7.28, "chg": 1.65, "z": 2.97, "anom": true, "unit": "%", "slug": "mortgage30us"}, {"id": "MORTGAGE15US", "en": "15-Year Fixed Rate Mortgage Average", "zh": "15年房贷利率", "cat": "Housing", "date": "2026-10-08", "value": 6.73, "prev": 6.6, "chg": 1.97, "z": 2.97, "anom": true, "unit": "%", "slug": "mortgage15us"}, {"id": "USSTHPI", "en": "FHFA House Price Index", "zh": "FHFA房价指数", "cat": "Housing", "date": "2026-04-01", "value": 719.87, "prev": 712.2, "chg": 1.08, "z": 1.33, "anom": false, "unit": "", "slug": "ussthpi"}, {"id": "NHSUSSPT", "en": "New One-Family Houses Sold (Monthly Supply)", "zh": "新屋销售", "cat": "Housing", "date": "2026-08-01", "value": 57.0, "prev": 53.0, "chg": 7.55, "z": 0.09, "anom": false, "unit": "", "slug": "nhsusspt"}, {"id": "ETOTALUSQ176N", "en": "All Housing Units", "zh": "住房空置率", "cat": "Housing", "date": "2026-04-01", "value": 149454.0, "prev": 149006.0, "chg": 0.3, "z": 1.69, "anom": false, "unit": "", "slug": "etotalusq176n"}, {"id": "QUSR628BIS", "en": "Real Residential Property Prices (BIS)", "zh": "实际房价指数", "cat": "Housing", "date": "2026-01-01", "value": 156.4275, "prev": 158.3161, "chg": -1.19, "z": 0.55, "anom": false, "unit": "", "slug": "qusr628bis"}, {"id": "DFF", "en": "Federal Funds Effective Rate", "zh": "联邦基金利率", "cat": "Rates", "date": "2026-10-08", "value": 3.88, "prev": 3.88, "chg": 0.0, "z": 0.6, "anom": false, "unit": "%", "slug": "dff"}, {"id": "DFEDTARU", "en": "Federal Funds Target Range - Upper Limit", "zh": "利率目标上限", "cat": "Rates", "date": "2026-10-13", "value": 4.0, "prev": 4.0, "chg": 0.0, "z": 0.33, "anom": false, "unit": "%", "slug": "dfedtaru"}, {"id": "DFEDTARL", "en": "Federal Funds Target Range - Lower Limit", "zh": "利率目标下限", "cat": "Rates", "date": "2026-10-13", "value": 3.75, "prev": 3.75, "chg": 0.0, "z": 0.33, "anom": false, "unit": "%", "slug": "dfedtarl"}, {"id": "DPRIME", "en": "Bank Prime Loan Rate", "zh": "银行最优惠利率", "cat": "Rates", "date": "2026-10-02", "value": 7.0, "prev": 7.0, "chg": 0.0, "z": 1.22, "anom": false, "unit": "%", "slug": "dprime"}, {"id": "DGS3MO", "en": "3-Month Treasury Constant Maturity Rate", "zh": "3个月国债", "cat": "Rates", "date": "2026-10-08", "value": 4.23, "prev": 4.22, "chg": 0.24, "z": 0.99, "anom": false, "unit": "%", "slug": "dgs3mo"}, {"id": "DGS1", "en": "1-Year Treasury Constant Maturity Rate", "zh": "1年国债", "cat": "Rates", "date": "2026-10-08", "value": 4.44, "prev": 4.42, "chg": 0.45, "z": 0.49, "anom": false, "unit": "%", "slug": "dgs1"}, {"id": "DGS2", "en": "2-Year Treasury Constant Maturity Rate", "zh": "2年国债", "cat": "Rates", "date": "2026-10-08", "value": 4.75, "prev": 4.77, "chg": -0.42, "z": 0.47, "anom": false, "unit": "%", "slug": "dgs2"}, {"id": "DGS5", "en": "5-Year Treasury Constant Maturity Rate", "zh": "5年国债", "cat": "Rates", "date": "2026-10-08", "value": 4.99, "prev": 5.03, "chg": -0.8, "z": 0.79, "anom": false, "unit": "%", "slug": "dgs5"}, {"id": "DGS10", "en": "10-Year Treasury Constant Maturity Rate", "zh": "10年国债", "cat": "Rates", "date": "2026-10-08", "value": 5.22, "prev": 5.28, "chg": -1.14, "z": 0.98, "anom": false, "unit": "%", "slug": "dgs10"}, {"id": "DGS30", "en": "30-Year Treasury Constant Maturity Rate", "zh": "30年国债", "cat": "Rates", "date": "2026-10-08", "value": 5.6, "prev": 5.67, "chg": -1.23, "z": 1.22, "anom": false, "unit": "%", "slug": "dgs30"}, {"id": "T10Y2Y", "en": "10-Year Minus 2-Year Treasury Spread", "zh": "10Y-2Y利差", "cat": "Rates", "date": "2026-10-09", "value": 0.44, "prev": 0.47, "chg": -6.38, "z": 0.85, "anom": false, "unit": "pp", "slug": "t10y2y"}, {"id": "T10Y3M", "en": "10-Year Minus 3-Month Treasury Spread", "zh": "10Y-3M利差", "cat": "Rates", "date": "2026-10-09", "value": 0.99, "prev": 0.99, "chg": 0.0, "z": 0.65, "anom": false, "unit": "pp", "slug": "t10y3m"}, {"id": "DAAA", "en": "Moody's Aaa Corporate Bond Yield", "zh": "AAA企业债", "cat": "Rates", "date": "2026-10-08", "value": 6.25, "prev": 6.26, "chg": -0.16, "z": 1.2, "anom": false, "unit": "%", "slug": "daaa"}, {"id": "DBAA", "en": "Moody's Baa Corporate Bond Yield", "zh": "BAA企业债", "cat": "Rates", "date": "2026-10-08", "value": 6.7, "prev": 6.74, "chg": -0.59, "z": 1.14, "anom": false, "unit": "%", "slug": "dbaa"}, {"id": "M2SL", "en": "M2 Money Stock", "zh": "M2货币供应", "cat": "Money & Credit", "date": "2026-08-01", "value": 23342.8, "prev": 23217.9, "chg": 0.54, "z": 1.98, "anom": false, "unit": "", "slug": "m2sl"}, {"id": "M1SL", "en": "M1 Money Stock", "zh": "M1货币供应", "cat": "Money & Credit", "date": "2026-08-01", "value": 19991.1, "prev": 19886.5, "chg": 0.53, "z": 2.02, "anom": true, "unit": "", "slug": "m1sl"}, {"id": "M2V", "en": "Velocity of M2 Money Stock", "zh": "M2流通速度", "cat": "Money & Credit", "date": "2026-04-01", "value": 1.418, "prev": 1.415, "chg": 0.21, "z": 0.9, "anom": false, "unit": "", "slug": "m2v"}, {"id": "BOGMBASE", "en": "Monetary Base", "zh": "货币基础", "cat": "Money & Credit", "date": "2026-08-01", "value": 5411.6, "prev": 5523.9, "chg": -2.03, "z": -1.19, "anom": false, "unit": "", "slug": "bogmbase"}, {"id": "WALCL", "en": "Federal Reserve Total Assets", "zh": "美联储总资产", "cat": "Money & Credit", "date": "2026-10-07", "value": 6747560.0, "prev": 6743031.0, "chg": 0.07, "z": 0.92, "anom": false, "unit": "", "slug": "walcl"}, {"id": "RRPONTSYD", "en": "Overnight Reverse Repo Agreements", "zh": "隔夜逆回购", "cat": "Money & Credit", "date": "2026-10-09", "value": 0.3, "prev": 0.335, "chg": -10.45, "z": -0.59, "anom": false, "unit": "", "slug": "rrpontsyd"}, {"id": "TOTLL", "en": "Loans and Leases in Bank Credit", "zh": "银行信贷总额", "cat": "Money & Credit", "date": "2026-09-30", "value": 14128.1334, "prev": 14097.2916, "chg": 0.22, "z": 1.75, "anom": false, "unit": "", "slug": "totll"}, {"id": "DRALACBN", "en": "Delinquency Rate on C&I Loans", "zh": "工商业贷款", "cat": "Money & Credit", "date": "2026-04-01", "value": 1.38, "prev": 1.46, "chg": -5.48, "z": -0.17, "anom": false, "unit": "", "slug": "dralacbn"}, {"id": "TOTALSL", "en": "Total Consumer Credit Outstanding", "zh": "消费信贷总额", "cat": "Money & Credit", "date": "2026-08-01", "value": 5196778.44, "prev": 5188497.83, "chg": 0.16, "z": 2.05, "anom": true, "unit": "", "slug": "totalsl"}, {"id": "REAINTRATREARAT10Y", "en": "10-Year Real Interest Rate (TIPS)", "zh": "10年实际利率", "cat": "Money & Credit", "date": "2026-09-01", "value": 2.2449, "prev": 2.1909, "chg": 2.47, "z": 2.01, "anom": true, "unit": "", "slug": "reaintratrearat10y"}, {"id": "BAMLH0A0HYM2", "en": "ICE BofA US High Yield Spread (OAS)", "zh": "高收益债利差", "cat": "Money & Credit", "date": "2026-10-08", "value": 3.15, "prev": 3.09, "chg": 1.94, "z": 1.67, "anom": false, "unit": "pp", "slug": "bamlh0a0hym2"}, {"id": "SOFR", "en": "Secured Overnight Financing Rate (SOFR)", "zh": "SOFR隔夜融资利率", "cat": "Money & Credit", "date": "2026-10-09", "value": 3.87, "prev": 3.87, "chg": 0.0, "z": 0.77, "anom": false, "unit": "%", "slug": "sofr"}, {"id": "STLFSI4", "en": "St. Louis Fed Financial Stress Index", "zh": "金融压力指数", "cat": "Money & Credit", "date": "2026-10-02", "value": -0.4681, "prev": -0.8091, "chg": 42.15, "z": 1.11, "anom": false, "unit": "", "slug": "stlfsi4"}, {"id": "NETEXP", "en": "Net Exports of Goods and Services", "zh": "净出口", "cat": "Trade & Dollar", "date": "2026-04-01", "value": -880.263, "prev": -820.787, "chg": -7.25, "z": -0.57, "anom": false, "unit": "", "slug": "netexp"}, {"id": "BOPGSTB", "en": "Trade Balance: Goods and Services", "zh": "贸易差额", "cat": "Trade & Dollar", "date": "2026-08-01", "value": -105572.0, "prev": -92826.0, "chg": -13.73, "z": -1.41, "anom": false, "unit": "", "slug": "bopgstb"}, {"id": "EXPGS", "en": "Exports of Goods and Services", "zh": "出口", "cat": "Trade & Dollar", "date": "2026-04-01", "value": 3794.645, "prev": 3547.32, "chg": 6.97, "z": 1.98, "anom": false, "unit": "", "slug": "expgs"}, {"id": "IMPGS", "en": "Imports of Goods and Services", "zh": "进口", "cat": "Trade & Dollar", "date": "2026-04-01", "value": 4674.908, "prev": 4368.106, "chg": 7.02, "z": 1.76, "anom": false, "unit": "", "slug": "impgs"}, {"id": "IEABC", "en": "Current Account Balance", "zh": "经常账户", "cat": "Trade & Dollar", "date": "2026-04-01", "value": -246023.0, "prev": -212597.0, "chg": -15.72, "z": -0.35, "anom": false, "unit": "", "slug": "ieabc"}, {"id": "DTWEXBGS", "en": "Nominal Broad U.S. Dollar Index", "zh": "美元指数", "cat": "Trade & Dollar", "date": "2026-10-02", "value": 121.3848, "prev": 121.7882, "chg": -0.33, "z": 1.91, "anom": false, "unit": "", "slug": "dtwexbgs"}, {"id": "DEXCHUS", "en": "Chinese Yuan per U.S. Dollar", "zh": "美元/人民币", "cat": "Trade & Dollar", "date": "2026-10-02", "value": 6.7038, "prev": 6.7038, "chg": 0.0, "z": -0.89, "anom": false, "unit": "CNY per USD", "slug": "dexchus"}, {"id": "DEXUSEU", "en": "U.S. Dollars per Euro", "zh": "欧元/美元", "cat": "Trade & Dollar", "date": "2026-10-02", "value": 1.1259, "prev": 1.1232, "chg": 0.24, "z": -2.01, "anom": true, "unit": "USD per EUR", "slug": "dexuseu"}, {"id": "SP500", "en": "S&P 500", "zh": "标普500", "cat": "Markets", "date": "2026-10-12", "value": 7807.24, "prev": 7811.54, "chg": -0.06, "z": 1.54, "anom": false, "unit": "index", "slug": "sp500"}, {"id": "NASDAQCOM", "en": "Nasdaq Composite Index", "zh": "纳斯达克", "cat": "Markets", "date": "2026-10-12", "value": 27245.9, "prev": 27366.17, "chg": -0.44, "z": 1.04, "anom": false, "unit": "index", "slug": "nasdaqcom"}, {"id": "DJIA", "en": "Dow Jones Industrial Average", "zh": "道琼斯", "cat": "Markets", "date": "2026-10-12", "value": 51850.55, "prev": 51654.95, "chg": 0.38, "z": -0.08, "anom": false, "unit": "index", "slug": "djia"}, {"id": "VIXCLS", "en": "VIX Volatility Index", "zh": "VIX恐慌指数", "cat": "Markets", "date": "2026-10-09", "value": 14.84, "prev": 15.41, "chg": -3.7, "z": -0.87, "anom": false, "unit": "index", "slug": "vixcls"}, {"id": "DCOILWTICO", "en": "WTI Crude Oil Price", "zh": "WTI原油", "cat": "Markets", "date": "2026-10-06", "value": 96.24, "prev": 96.13, "chg": 0.11, "z": 0.1, "anom": false, "unit": "$/barrel", "slug": "dcoilwtico"}, {"id": "DCOILBRENTEU", "en": "Brent Crude Oil Price", "zh": "布伦特原油", "cat": "Markets", "date": "2026-10-06", "value": 125.44, "prev": 125.51, "chg": -0.06, "z": 1.0, "anom": false, "unit": "$/barrel", "slug": "dcoilbrenteu"}, {"id": "DEXJPUS", "en": "Japanese Yen per U.S. Dollar", "zh": "美元/日元", "cat": "Markets", "date": "2026-10-02", "value": 157.81, "prev": 157.63, "chg": 0.11, "z": 0.34, "anom": false, "unit": "JPY per USD", "slug": "dexjpus"}, {"id": "BAA10Y", "en": "Moody's Baa Yield minus 10-Year Treasury", "zh": "BAA-10Y利差", "cat": "Markets", "date": "2026-10-08", "value": 1.48, "prev": 1.46, "chg": 1.37, "z": -0.08, "anom": false, "unit": "pp", "slug": "baa10y"}, {"id": "BAMLCC0A0CMTRIV", "en": "ICE BofA US Corporate Index Total Return", "zh": "企业债总回报指数", "cat": "Markets", "date": "2026-10-08", "value": 3504.59, "prev": 3494.31, "chg": 0.29, "z": -0.92, "anom": false, "unit": "", "slug": "bamlcc0a0cmtriv"}];
+const tbody = document.querySelector('#tbl tbody');
+const q = document.getElementById('q'), only = document.getElementById('onlyanom');
+let cat = 'all';
+function fmt(v){ if(v===null||v===undefined) return '-';
+  return Math.abs(v)>=1000 ? v.toLocaleString('en-US',{maximumFractionDigits:1}) : String(Math.round(v*100)/100); }
+function render(){
+  const s = q.value.trim().toLowerCase();
+  const rows = DATA.filter(r =>
+    (cat==='all' || r.cat===cat) &&
+    (!only.checked || r.anom) &&
+    (!s || (r.en+' '+r.zh+' '+r.id+' '+r.cat).toLowerCase().includes(s)));
+  tbody.innerHTML = rows.map(r => {
+    const chg = r.chg===null ? '-' : (r.chg>0?'+':'') + r.chg.toFixed(2) + '%';
+    const cc = r.chg>0 ? 'chg up' : (r.chg<0 ? 'chg down' : 'chg');
+    const zc = Math.abs(r.z||0)>=2 ? 'z hot' : 'z';
+    return '<tr class="'+(r.anom?'anom':'')+'"><td><a href="indicators/'+r.slug+'.html"><b>'+r.en+'</b></a>' +
+      '<br><span class="zh" style="color:var(--dim);font-size:12px">'+r.zh+' · '+r.id+(r.anom?' · anomaly':'')+'</span></td>' +
+      '<td>'+r.cat+'</td><td class="num">'+fmt(r.value)+(r.unit?' '+r.unit:'')+'</td>' +
+      '<td class="num"><span class="'+cc+'">'+chg+'</span></td>' +
+      '<td class="num"><span class="'+zc+'">'+(r.z===null?'-':(r.z>0?'+':'')+r.z.toFixed(2))+'</span></td>' +
+      '<td>'+r.date+'</td></tr>';
+  }).join('');
+  document.getElementById('count').textContent = rows.length + ' of ' + DATA.length + ' indicators shown.';
+}
+document.querySelectorAll('#chips .chip').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#chips .chip').forEach(x => x.classList.remove('on'));
+  b.classList.add('on'); cat = b.dataset.cat; render();
+});
+q.oninput = render; only.onchange = render; render();
+</script>
+</body></html>

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ezra-zhao.github.io/us-indicator-radar/sitemap.xml
